@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { ColDef } from 'ag-grid-community';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AgGridAngular } from 'ag-grid-angular';
+import { CellClickedEvent, ColDef } from 'ag-grid-community';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-root',
@@ -21,10 +22,19 @@ public defaultColDef: ColDef = {
   filter: true,
 };
 
+@ViewChild(AgGridAngular) AgGrid!: AgGridAngular;
 
 constructor(private http: HttpClient){}
   ngOnInit() {
    this.rowData$= this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json')
   }
 
+  onCellClicked(event:CellClickedEvent){
+    console.log('onCellClicked', event);
+  }
+
+
+  clearSelected(){
+    this.AgGrid.api.deselectAll();
+  }
 }
