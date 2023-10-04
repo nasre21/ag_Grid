@@ -1,11 +1,12 @@
-<button class="btn btn-danger mb-5 mt-5 ms-3" (click)="clearSelected()">Clear</button>
+<button class="btn btn-danger mb-5 mt-5 ms-5" (click)="clearSelected()">Clear</button>
 <ag-grid-angular
-class="ag-theme-alpine-dark"
+class="ag-theme-alpine-dark ms-5"
 style="height: 500px; width: 500px;"
-[rowData]="rowData$ |async"
+[rowData]="rowData$ | async"
 [columnDefs]="colDefs"
 [defaultColDef]="defaultColDef"
 [rowSelection]="'multiple'"
+[rowGroupPanelShow]="'always'"
 [animateRows]="true"
 (cellClicked)="onCellClicked($event)"
 ></ag-grid-angular>

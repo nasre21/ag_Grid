@@ -13,8 +13,9 @@ export class AppComponent  implements OnInit{
 colDefs:ColDef[] = [
 
   {field: 'make'},
-  {field: 'model'},
-  {field: 'price'}
+  {field: 'model', rowGroup: true},
+  {field: 'price'},
+
 
 ];
 public defaultColDef: ColDef = {
