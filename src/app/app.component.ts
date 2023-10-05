@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { CellClickedEvent, ColDef } from 'ag-grid-community';
 import { Observable } from 'rxjs';
+import { MyCellComponent } from './components/my-cell/my-cell.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +13,7 @@ export class AppComponent  implements OnInit{
  public rowData$!: Observable<any[]>;
 colDefs:ColDef[] = [
 
-  {field: 'make'},
+  {field: 'make', cellRenderer:MyCellComponent},
   {field: 'model', rowGroup: true},
   {field: 'price'},
 

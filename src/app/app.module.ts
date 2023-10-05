@@ -6,12 +6,15 @@ import {HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 
 
-import'ag-grid-enterprise'
+import'ag-grid-enterprise';
+import { MyCellComponent } from './components/my-cell/my-cell.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyCellComponent
   ],
   imports: [
     BrowserModule,
