@@ -6,8 +6,11 @@ import { ICellRendererParams } from 'ag-grid-community';
   selector: 'app-my-cell',
   template: `
     <p class="">
-   <button class="btn btn-danger  text-light  " (click)="onClick($event)">Click  </button> <strong class="ps-3">{{value}}</strong>
+   <button class="btn btn-danger  text-light  " (click)="onClick($event)">Click  </button> <span  class="fw-bold ps-3">{{value}}</span>
     </p>
+
+
+
   `,
   styles: [
   ]
